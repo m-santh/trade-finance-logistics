@@ -45,12 +45,37 @@ participant Customer extends Person {
 
 participant BankEmployee extends Person {
 }
+
 transaction InitialApplication {
   o String letterId
   --> Customer applicant
   --> Customer beneficiary
   o Rule[] rules
   o ProductDetails productDetails
+}
+
+transaction Approve {
+}
+
+transaction Reject {
+}
+
+transaction SuggestChanges {
+}
+
+transaction ShipProduct {
+}
+
+transaction ReceiveProduct {
+}
+
+transaction ReadyForPayment{
+}
+
+transaction Close {
+}
+
+transaction CreateDemoParticipants {
 }
 
 concept ProductDetails {
@@ -73,4 +98,25 @@ event highValueLetterEvent {
 }
 event lowRiskLetterEvent {
   --> LetterOfCredit loc
+}
+
+event ApproveEvent {
+}
+
+event RejectEvent{
+}
+
+event SuggestChangesEvent {
+}
+
+event ShipProductEvent {
+}
+
+event ReceiveProductEvent {
+}
+
+event ReadyForPaymentEvent {
+}
+
+event CloseEvent {
 }
